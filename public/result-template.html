@@ -1,0 +1,31 @@
+<!-- public/result-template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Result</title>
+</head>
+
+<body>
+    <h1>Calculator Result</h1>
+    <p>Result of <span id="num1"></span> + <span id="num2"></span> = <span id="addition"></span></p>
+    <p>Result of <span id="num1"></span> - <span id="num2"></span> = <span id="subtraction"></span></p>
+    <p>Result of <span id="num1"></span> * <span id="num2"></span> = <span id="multiplication"></span></p>
+    <p>Result of <span id="num1"></span> / <span id="num2"></span> = <span id="division"></span></p>
+    <br>
+    <a href="/">Back to Calculator</a>
+
+    <script>
+        document.getElementById('num1').textContent = '${num1}';
+        document.getElementById('num2').textContent = '${num2}';
+        document.getElementById('addition').textContent = '${addition}';
+        document.getElementById('subtraction').textContent = '${subtraction}';
+        document.getElementById('multiplication').textContent = '${multiplication}';
+        document.getElementById('division').textContent = '${division}';
+    </script>
+</body>
+
+</html>
