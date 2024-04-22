@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+     "build": "echo 'No build steps required for this application'"
   },
   "author": "Ravneet",
   "license": "MIT",
