@@ -2,11 +2,11 @@
   "name": "node-calculator",
   "version": "1.0.0",
   "description": "A simple Node.js calculator application",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node src/app.js",
     "test": "jest --runInBand --detectOpenHandles --forceExit",
-     "build": "echo 'No build steps required for this application'"
+   "build": "node build.js"
   },
   "author": "Ravneet",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "fs-extra": "^11.2.0",
     "jest": "^27.5.1",
     "supertest": "^6.2.2"
   }

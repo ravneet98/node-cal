@@ -14,7 +14,7 @@ app.use(express.static("public"));
 
 // Routes
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile("./public/index.html");
 });
 
 app.post("/calculate", (req, res) => {
@@ -30,27 +30,23 @@ app.post("/calculate", (req, res) => {
   };
 
   // Read the template file and replace placeholders with calculated results
-  fs.readFile(
-    __dirname + "/public/result-template.html",
-    "utf8",
-    (err, data) => {
-      if (err) {
-        console.error("Error reading template file:", err);
-        res.status(500).send("Internal Server Error");
-        return;
-      }
-
-      const renderedHtml = data
-        .replace("${num1}", number1)
-        .replace("${num2}", number2)
-        .replace("${addition}", result.addition)
-        .replace("${subtraction}", result.subtraction)
-        .replace("${multiplication}", result.multiplication)
-        .replace("${division}", result.division);
-
-      res.send(renderedHtml);
+  fs.readFile("./public/result-template.html", "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading template file:", err);
+      res.status(500).send("Internal Server Error");
+      return;
     }
-  );
+
+    const renderedHtml = data
+      .replace("${num1}", number1)
+      .replace("${num2}", number2)
+      .replace("${addition}", result.addition)
+      .replace("${subtraction}", result.subtraction)
+      .replace("${multiplication}", result.multiplication)
+      .replace("${division}", result.division);
+
+    res.send(renderedHtml);
+  });
 });
 
 // Start the server
